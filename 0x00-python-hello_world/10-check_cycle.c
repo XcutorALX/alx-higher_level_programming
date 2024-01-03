@@ -12,8 +12,8 @@ int check_cycle(listint_t *list)
 {
 	struct listint_s *fast, *slow;
 
-	slow = list->next;
-	fast = list->next->next;
+	slow = list;
+	fast = list->next;
 
 	while (fast && slow && fast->next)
 	{
