@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * reverse_list - reverses a linked list
  *
@@ -10,26 +9,23 @@
 
 listint_t *reverse_list(listint_t **head)
 {
-	struct listint_s *current, *temp, *rev;
+	struct listint_s *current, *tail;
 
 	if (*head == NULL)
 		return (NULL);
 
-	rev = malloc(sizeof(listint_t));
-	rev->n = (*head)->n;
-	rev->next = NULL;
+	tail = *head;
 	current = *head;
+	current->prev = NULL;
 
 	while (current != NULL && current->next != NULL)
 	{
+		current->next->prev = current;
 		current = current->next;
-		temp = rev;
-		rev = malloc(sizeof(listint_t));
-		rev->n = current->n;
-		rev->next = temp;
 	}
+	tail = current;
 
-	return (rev);
+	return (tail);
 }
 /**
  * is_palindrome - checks if a linked list is a palindrome
@@ -45,7 +41,7 @@ int is_palindrome(listint_t **head)
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	
+
 	tail = reverse_list(head);
 	forward = *head;
 	backward = tail;
@@ -56,8 +52,8 @@ int is_palindrome(listint_t **head)
 			return (0);
 
 		forward = forward->next;
-		backward = backward->next;
+		backward = backward->prev;
 	}
-	free_listint(tail);
+
 	return (1);
 }
