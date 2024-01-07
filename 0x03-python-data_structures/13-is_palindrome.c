@@ -52,7 +52,7 @@ int is_palindrome(listint_t **head)
 			return (0);
 
 		forward = forward->next;
-		backward = backward->next;
+		backward = backward->prev;
 	}
 
 	return (1);
