@@ -46,7 +46,7 @@ int is_palindrome(listint_t **head)
 	forward = *head;
 	backward = tail;
 
-	while (forward != NULL && backward != NULL)
+	while (forward != NULL && backward != NULL && forward != backward)
 	{
 		if (forward->n != backward->n)
 			return (0);
