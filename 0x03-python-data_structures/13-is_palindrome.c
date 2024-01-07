@@ -39,7 +39,7 @@ int is_palindrome(listint_t **head)
 {
 	struct listint_s *tail, *forward, *backward;
 
-	if (*head == NULL)
+	if (*head == NULL || *head->next == NULL)
 		return (1);
 
 	tail = reverse_list(head);
