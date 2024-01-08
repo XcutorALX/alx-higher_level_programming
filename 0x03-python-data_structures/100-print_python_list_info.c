@@ -4,7 +4,7 @@
 /**
  * print_python_list_info - prints a python list object and it's info
  *
- * @PyObject *p: a pointer to a python object
+ * @p: a pointer to a python object
  *
  * Return: none
  */
