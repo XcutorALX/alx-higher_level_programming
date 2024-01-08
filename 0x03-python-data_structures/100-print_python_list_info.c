@@ -17,15 +17,17 @@ void print_python_list_info(PyObject *p)
 	
 	if (p == NULL)
 		return;
-
-	size = PyList_Size(p);
-	list = (PyListObject *)p;
-	printf("[*] Size of the Python List = %ld\n", size);
-	printf("[*] Allocated = %ld\n", list->allocated);
-
-	for (index = 0; index < size; index++)
+	if (PyList_Check(p) == 1)
 	{
-		item = PyList_GET_ITEM(p, index);
-		printf("Element %ld: %s\n", index, Py_TYPE(item)->tp_name);
+		size = PyList_Size(p);
+		list = (PyListObject *)p;
+		printf("[*] Size of the Python List = %ld\n", size);
+		printf("[*] Allocated = %ld\n", list->allocated);
+
+		for (index = 0; index < size; index++)
+		{
+			item = PyList_GET_ITEM(p, index);
+			printf("Element %ld: %s\n", index, Py_TYPE(item)->tp_name);
+		}
 	}
 }
