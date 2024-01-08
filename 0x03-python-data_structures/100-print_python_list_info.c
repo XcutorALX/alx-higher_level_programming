@@ -14,6 +14,9 @@ void print_python_list_info(PyObject *p)
 	PyListObject *list;
 	PyObject *item;
 	long int size, index;
+	
+	if (p == NULL)
+		return;
 
 	size = PyList_Size(p);
 	list = (PyListObject *)p;
