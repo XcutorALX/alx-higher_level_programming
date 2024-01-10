@@ -58,6 +58,8 @@ void print_python_list(PyObject *p)
 	for (index = 0; index < size; index++)
 	{
 		printf("Element %d: %s\n", index, list->ob_item[index]->ob_type->tp_name);
+		if (!strcmp(list->ob_item[index]->ob_type->tp_name, "bytes"))
+                        print_python_bytes(list->ob_item[index]);
 	}
 
 }
