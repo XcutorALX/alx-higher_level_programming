@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
-    if (value is None):
+    if (value is None or value is True or value is False):
         return (False)
     try:
         print("{:d}".format(value))
