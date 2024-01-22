@@ -2,7 +2,7 @@
 def safe_print_list(my_list=[], x=0):
     i = 0
 
-    if (my_list == None):
+    if (my_list == None or x < 0):
         return (0)
 
     while (i < x):
