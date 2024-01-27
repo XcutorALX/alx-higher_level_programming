@@ -1,0 +1,62 @@
+The ``0-add_integer`` module
+
+============================
+
+Using ``add_integer``
+---------------------
+
+Importing add_integer from 0-add_integer
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+adding two integers
+	>>> add_integer(1,2)
+	3
+
+adding an integer and a float
+	>>> add_integer(4, 4.5)
+	8
+	>>> add_integer(5.2, 8)
+	13
+
+adding two floats
+	>>> add_integer(9.2, 3.4)
+	12
+
+adding an integer and a string
+	>>> add_integer(10, '4')
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+	>>> add_integer('5', 10)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+adding two strings
+	>>> add_integer ('a', 'b')
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+passing in None
+	>>> add_integer (5, None)
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+	>>> add_integer (None)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+passing in lists/tuples/dictionaries
+	>>> add_integer ([1,2,3], 5)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer ({'a': 6}, 6)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
