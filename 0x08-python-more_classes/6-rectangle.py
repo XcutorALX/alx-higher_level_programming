@@ -4,6 +4,8 @@
 
 class Rectangle:
     """Represents a rectangle"""
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initializes an instance of the Rectangle Object
 
@@ -11,6 +13,7 @@ class Rectangle:
             width(int): the width of the rectangle
             heigth(int): the height of the rectangle
         """
+        Rectangle.number_of_instances += 1
         self.height = height
         self.width = width
 
@@ -77,3 +80,8 @@ class Rectangle:
         """Returns the official string representation of the object"""
 
         return ("Rectangle({}, {})".format(self.width, self.height))
+
+    def __del__(self):
+        """This function is called when an instance of this class is deleted"""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
