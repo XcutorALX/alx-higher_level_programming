@@ -87,3 +87,22 @@ class Rectangle:
         """This function is called when an instance of this class is deleted"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """This function compares two rectangle instances
+
+        Args:
+            rect_1: the first rectangle
+            rect_2: the second rectangle
+        """
+
+        param = {"rect_1": rect_1, "rect_2": rect_2}
+        for obj in param:
+            if not isinstance(param[obj], Rectangle):
+                raise TypeError(f"{obj} must be an instance of Rectangle")
+
+        if rect_1.area() >= rect_2.area():
+            return (rect_1)
+
+        return (rect_2)
