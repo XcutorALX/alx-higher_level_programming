@@ -9,7 +9,6 @@ class BaseGeometry:
     A BaseGeometry class
     """
 
-
     def area(self):
         """
         returns the area
