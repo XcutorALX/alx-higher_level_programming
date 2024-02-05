@@ -1,0 +1,39 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+>>> b = BaseGeometry()
+>>> b.area()
+Traceback (most recent call last):
+	...
+Exception: area() is not implemented
+
+>>> b.integer_validator("Idan", 5)
+
+
+Check when value is not an int
+
+>>> b.integer_validator("Name", "my name")
+Traceback (most recent call last):
+	...
+TypeError: Name must be an integer
+
+>>> b.integer_validator("Bool", True)
+Traceback (most recent call last):
+	...
+TypeError: Bool must be an integer
+
+>>> b.integer_validator("None", None)
+Traceback (most recent call last):
+	...
+TypeError: None must be an integer
+
+Check when value is less than or equal to zero
+>>> b.integer_validator("Value", -22)
+Traceback (most recent call last):
+	...
+ValueError: Value must be greater than 0
+
+>>> b.integer_validator("Value", 0)
+Traceback (most recent call last):
+	...
+ValueError: Value must be greater than 0
