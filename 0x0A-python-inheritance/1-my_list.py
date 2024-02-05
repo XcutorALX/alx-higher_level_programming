@@ -4,7 +4,7 @@
 
 class MyList(list):
     """A class that inherits from my list
-    
+
     Base:
         list: the python list object
     """

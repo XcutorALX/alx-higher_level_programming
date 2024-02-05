@@ -8,7 +8,7 @@ def is_same_class(obj, a_class):
     Args:
         obj: the first object to test
         a_class: class to test with
-    
+
     Return: True if same class otherwise False
     """
 
