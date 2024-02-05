@@ -1,0 +1,24 @@
+1-my_list.py module
+
+===================
+
+MyList class
+------------
+
+Importing the class from the module:
+>>> MyList = __import__("1-my_list").MyList
+
+Checking for module docstring
+>>> m = __import__("1-my_list").__doc__
+>>> len(m) > 1
+True
+
+Checking given test case
+>>> my_list = MyList()
+
+>>> my_list.append(0)
+>>> my_list.append(1)
+>>> my_list.append(2)
+
+print(my_list)
+[0, 1, 2]
