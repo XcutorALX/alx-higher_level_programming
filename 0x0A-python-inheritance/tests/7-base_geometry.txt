@@ -2,6 +2,14 @@
 
 
 >>> b = BaseGeometry()
+
+>>> str = b.__doc__
+>>> str2 = b.area.__doc__
+>>> str3 = b.integer_validator.__doc__
+>>> str4 = __import__('7-base_geometry').__doc__
+>>> len(str) > 1 and len(str2) > 1 and len(str3) > 1 and len(str4) > 1
+True
+
 >>> b.area()
 Traceback (most recent call last):
 	...
