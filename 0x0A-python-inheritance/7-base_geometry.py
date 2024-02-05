@@ -1,18 +1,25 @@
 #!/usr/bin/python3
-"""This module contains a Base geometry class"""
+"""
+This module contains a Base geometry class
+"""
 
 
 class BaseGeometry:
-    """A BaseGeometry class"""
+    """
+    A BaseGeometry class
+    """
 
 
     def area(self):
-        """returns the area"""
+        """
+        returns the area
+        """
         
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates an integer
+        """
+        Validates an integer
 
         Args:
             name: the name
