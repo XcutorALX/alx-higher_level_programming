@@ -9,7 +9,6 @@ def is_kind_of_class(obj, a_class):
         obj: the object to check
         a_class: the class to compare with
 
-    Return: True or False"""
-
-
+    Return: True or False
+    """
     return (isinstance(obj, a_class))
