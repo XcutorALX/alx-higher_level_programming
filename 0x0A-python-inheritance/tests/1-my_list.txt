@@ -13,6 +13,12 @@ Checking for module docstring
 >>> len(m) > 1
 True
 
+Checking for function docstring
+>>> a = MyList.__doc__
+>>> b = MyList.print_sorted.__doc__
+>>> len(b) > 1 and len(b) > 1
+True
+
 Checking given test case
 >>> my_list = MyList()
 
