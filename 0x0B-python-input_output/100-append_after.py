@@ -3,13 +3,15 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Inserts new_string after the line containing search_string"""
+    """Inserts new_string after the line containing search_string
+    
+    Args:
+        filename: the name of the file
+        search_string: the string to search for
+        new_string: the string to add
+    """
 
-    if not search_string or not new_string:
-        return 0
-
-    with open(filename, mode='a+', encoding='utf-8') as f:
-        f.seek(0)
+    with open(filename, mode='r+', encoding='utf-8') as f:
         lines = f.readlines()
         f.seek(0)
         f.truncate(0)
