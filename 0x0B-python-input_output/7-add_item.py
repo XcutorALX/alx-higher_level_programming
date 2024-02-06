@@ -7,12 +7,14 @@ load_json = __import__("6-load_from_json_file").load_from_json_file
 
 
 filename = "add_item.json"
-with open(filename, encoding="utf-8", mode="w+") as f:
+with open(filename, encoding="utf-8", mode="a+") as f:
     my_list = []
 
+    f.seek(0)
     if f.read() != "":
         f.seek(0)
         my_list = json.load(f)
 
-    my_list += argv[1:]
+    my_list = my_list + argv[1:]
+    f.truncate(0)
     json.dump(my_list, f)
