@@ -5,6 +5,9 @@
 def append_after(filename="", search_string="", new_string=""):
     """Inserts new_string after the line containing search_string"""
 
+    if not search_string or not new_string:
+        return 0
+
     with open(filename, mode='a+', encoding='utf-8') as f:
         f.seek(0)
         lines = f.readlines()
