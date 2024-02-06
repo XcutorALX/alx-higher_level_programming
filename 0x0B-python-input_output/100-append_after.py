@@ -4,7 +4,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """Inserts new_string after the line containing search_string
-    
+
     Args:
         filename: the name of the file
         search_string: the string to search for
