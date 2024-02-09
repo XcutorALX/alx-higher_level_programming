@@ -74,4 +74,40 @@ class Rectangle(Base):
     def display(self):
         """Prints a rectangle instance unto stdout"""
 
-        print(("#" * self.width + "\n") * self.height, end="")
+        if self.y != 0:
+            print("\n" * self.y, end='')
+
+        print((" " * self.x + ("#" * self.width) + "\n") * self.height, end="")
+
+    def __str__(self):
+        """String representation of a rectangle instance"""
+
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+
+    def update(self, *args, **kwargs):
+        """Updates all the attributes of rectangle"""
+
+        if len(args) == 0:
+            for i in kwargs:
+                if i == 'id':
+                    self.id = kwargs[i]
+                elif i == 'width':
+                    self.width = kwargs[i]
+                elif i == 'height':
+                    self.height = kwargs[i]
+                elif i == 'x':
+                    self.x = kwargs[i]
+                elif i == 'y':
+                    self.y = kwargs[i]
+
+        for i in range(len(args)):
+            if i == 0:
+                self.id = args[i]
+            elif i == 1:
+                self.width = args[i]
+            elif i == 2:
+                self.height = args[i]
+            elif i == 3:
+                self.x = args[i]
+            else:
+                self.y = args[i]

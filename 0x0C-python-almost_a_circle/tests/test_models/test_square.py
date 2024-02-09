@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-"""Test module for the Rectangle class in rectangle.py"""
+"""Test module for the Square class in the square module"""
 import unittest
 import sys
-from models.rectangle import Rectangle
+from models.square import Square
 from io import StringIO
 
 
-class TestRectangle(unittest.TestCase):
-    """Test Rectangle"""
+class TestSquare(unittest.TestCase):
+    """Test Square"""
 
     def test_withGoodInput(self):
         """Testing an instance with good input"""
 
-        test = Rectangle(5, 6, 3, 2)
-        test2 = Rectangle(2, 3)
+        test = Square(5, 3, 2)
+        test2 = Square(2)
         self.assertEqual(test2.x, 0)
         self.assertEqual(test.width, 5)
-        self.assertEqual(test.height, 6)
+        self.assertEqual(test.height, 5)
         self.assertEqual(test.x, 3)
         self.assertEqual(test.y, 2)
     
     def test_setters(self):
         """Testing the setters of Rectangle"""
 
-        test = Rectangle(5, 6, 3, 2)
+        test = Square(4, 6, 3, 2)
         test.width = 10
         self.assertEqual(test.width, 10)
         test.height = 15
