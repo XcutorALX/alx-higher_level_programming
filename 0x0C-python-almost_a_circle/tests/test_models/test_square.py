@@ -208,6 +208,17 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(test.id, 1)
         self.assertEqual(type(test), Square)
 
+    def test_attributes_docstring(self):
+        """Testing the docstring of the attributes method"""
+        info = Square.attributes.__doc__
+        self.assertEqual(len(info) > 1, True)
+
+    def test_attributes(self):
+        """Testing the attributes method of the Square class"""
+        result = ['id', 'size', 'x', 'y']
+        output = Square.attributes()
+        self.assertEqual(result, output)
+
 
 if __name__ == "__main__":
     unittest.main()

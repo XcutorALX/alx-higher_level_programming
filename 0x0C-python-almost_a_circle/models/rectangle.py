@@ -129,3 +129,8 @@ class Rectangle(Base):
     def dummyInstance():
         """Creates a dummy instance of this class"""
         return (Rectangle(1, 1, 0, 0))
+
+    @staticmethod
+    def attributes():
+        """Returns a list of attributes of this class"""
+        return (["id", "width", "height", "x", "y"])

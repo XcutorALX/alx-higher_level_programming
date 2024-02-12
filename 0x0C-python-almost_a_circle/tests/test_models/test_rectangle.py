@@ -243,6 +243,17 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(test.y, 0)
         self.assertEqual(test.id, 1)
 
+    def test_attributes_docstring(self):
+        """Testing the docstring of the attributes method"""
+        info = Rectangle.attributes.__doc__
+        self.assertEqual(len(info) > 1, True)
+
+    def test_attributes(self):
+        """Testing the attribute method of the Rectangle class"""
+        result = ['id', 'width', 'height', 'x', 'y']
+        output = Rectangle.attributes()
+        self.assertEqual(result, output)
+
 
 if __name__ == "__main__":
     unittest.main()

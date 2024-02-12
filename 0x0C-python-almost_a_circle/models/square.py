@@ -66,3 +66,8 @@ class Square(Rectangle):
     def dummyInstance():
         """creates a dummy instance of this class"""
         return (Square(1, 0, 0))
+
+    @staticmethod
+    def attributes():
+        """returns a list of attributes for this class"""
+        return (["id", "size", "x", "y"])
