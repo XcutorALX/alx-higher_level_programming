@@ -22,7 +22,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for width attribute"""
-        
+
         self.typeValidator("width", value)
         self.greaterThanValidator("width", value, 0)
         self.__width = value
@@ -82,7 +82,8 @@ class Rectangle(Base):
     def __str__(self):
         """String representation of a rectangle instance"""
 
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y}" +
+                f"- {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """Updates all the attributes of rectangle"""
@@ -111,3 +112,20 @@ class Rectangle(Base):
                 self.x = args[i]
             else:
                 self.y = args[i]
+
+    def to_dictionary(self):
+        """Returns the dict representation of a Rectangle"""
+
+        result = {
+                'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width}
+
+        return (result)
+
+    @staticmethod
+    def dummyInstance():
+        """Creates a dummy instance of this class"""
+        return (Rectangle(1, 1, 0, 0))
