@@ -171,6 +171,7 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """draw the list of rectangle and square instances"""
         if list_rectangles in [None, []] or list_squares in [None, []]:
             return
 

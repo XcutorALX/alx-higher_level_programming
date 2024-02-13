@@ -3,6 +3,7 @@
 import unittest
 import json
 import os
+import random
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -297,3 +298,9 @@ class TestBaseClass(unittest.TestCase):
         Base.resetId()
         test = Base.dummyInstance()
         self.assertEqual(test.id, 1)
+
+    def test_draw_docstring(self):
+        """Tests the docstring for the draw method"""
+
+        info = Base.draw.__doc__
+        self.assertEqual(len(info) > 1, True)
