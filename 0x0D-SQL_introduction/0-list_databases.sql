@@ -1,3 +1,2 @@
---introduction to sql
---lists all databases on this server
+--script for listing all databases on mySql server
 SHOW DATABASES;
