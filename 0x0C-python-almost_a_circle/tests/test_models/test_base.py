@@ -117,8 +117,7 @@ class TestBaseClass(unittest.TestCase):
         r3.save_to_file(None)
         r3.save_to_file([])
 
-        with open("Rectangle.json", encoding='utf-8') as f:
-            self.assertEqual([str(i) for i in Rectangle.load_from_file()],
+        self.assertEqual([str(i) for i in Rectangle.load_from_file()],
                              [str(i) for i in [r1, r2, r3]])
 
         f = open("Square.json", mode="w")
@@ -129,9 +128,10 @@ class TestBaseClass(unittest.TestCase):
         s3 = Square(4, 5, 2, 5)
         s1.save_to_file([s1, s2])
         s3.save_to_file([s3])
+        s3.save_to_file(None)
+        s3.save_to_file([])
 
-        with open("Square.json", encoding='utf-8') as f:
-            self.assertEqual([str(i) for i in Square.load_from_file()],
+        self.assertEqual([str(i) for i in Square.load_from_file()],
                              [str(i) for i in [s1, s2, s3]])
 
     def test_save_to_file_csv(self):

@@ -76,7 +76,7 @@ class Base:
                 f.seek(0)
                 prev_list = json.load(f)
 
-            if list_objs is None:
+            if list_objs in [None, []]:
                 new_list = []
             else:
                 new_list = [i.to_dictionary() for i in list_objs]
