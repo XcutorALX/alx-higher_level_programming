@@ -19,4 +19,5 @@ if __name__ == "__main__":
 
     result = session.execute(query).first()
 
-    print("{}: {}".format(result[0], result[1]))
+    if result:
+        print("{}: {}".format(result[0], result[1]))
