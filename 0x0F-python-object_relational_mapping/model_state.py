@@ -15,7 +15,9 @@ Base = declarative_base()
 
 
 class State(Base):
-
+    """
+    class representation of a state
+    """
     __tablename__ = "states"
     id = Column(
             Integer,
