@@ -18,8 +18,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = select(State)
-    result = session.scalars(query).all()
+    result = session.query(State).outerjoin(City).order_by(State.id, City.id).all()
 
     for row in result:
         print("{}: {}".format(row.id, row.name))
