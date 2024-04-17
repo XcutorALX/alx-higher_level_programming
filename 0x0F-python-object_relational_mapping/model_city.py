@@ -7,18 +7,17 @@ from the database hbtn_0e_0_usa
 import sys
 import MySQLdb
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from model_state import Base
 
-Base = declarative_base()
 
-
-class State(Base):
+class City(Base):
     """
-    class representation of a state
+    class representation of a city
     """
-    __tablename__ = "states"
+    __tablename__ = "cities"
     id = Column(
             Integer,
             primary_key=True,
@@ -29,5 +28,10 @@ class State(Base):
                 String(128),
                 nullable=False
             )
+    state_id = Column(
+                Integer,
+                ForeignKey('states.id'),
+                nullable=False,
+            )
 
-    cities = relationship("City", back_populates="state")
+    state = relationship('State', back_populates='cities')
