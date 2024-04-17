@@ -18,11 +18,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name="California")
-    new_city = City(name="San Francisco")
+    query = select(State)
+    result = session.scalars(query).all()
 
-    new_state.cities.append(new_city)
-    session.add(new_state)
-    session.add(new_city)
-    session.commit()
-    session.close()
+    for row in result:
+        print("{}: {}".format(row.id, row.name))
+        for city in row.cities:
+            print("\t{}: {}".format(city.id, city.name))
