@@ -19,5 +19,5 @@ if __name__ == "__main__":
 
     result = session.execute(query).first()
 
-    if result:
+    if result is not None:
         print("{}: {}".format(result[0], result[1]))
