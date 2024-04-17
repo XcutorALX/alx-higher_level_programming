@@ -21,3 +21,5 @@ if __name__ == "__main__":
 
     if result is not None:
         print("{}: {}".format(result[0], result[1]))
+    else:
+        print("Nothing")
