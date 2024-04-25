@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 # Script that sends an http request and displays the length of the response
-curl -sI $1 | grep "Content-Length" | grep -oP "\d+"
+curl -s -w %{size_download}"\n" "$1" -o /dev/null
