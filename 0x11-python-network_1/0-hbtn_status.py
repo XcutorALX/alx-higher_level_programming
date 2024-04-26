@@ -8,4 +8,4 @@ with urlopen("https://alx-intranet.hbtn.io/status") as response:
     print("Body response:")
     print(f"    - type: {type(message)}")
     print(f"    - content: {message}")
-    print(f"    - typeutf8 content: {message.decode('utf-8')}")
+    print(f"    - utf8 content: {message.decode('utf-8')}")
