@@ -6,7 +6,7 @@ if __name__ == "__main__":
     from urllib.request import urlopen, Request
     from urllib.parse import urlencode
     from sys import argv
-    
+
     data = {"email": argv[2]}
     data = urlencode(data).encode('utf-8')
     req = Request(argv[1], data=data, method="POST")
