@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""This module contains a find_peak function"""
+
+
 def find_peak(listint):
     """
     Finds a peak in a list of unsorted integers using recursive binary search.
