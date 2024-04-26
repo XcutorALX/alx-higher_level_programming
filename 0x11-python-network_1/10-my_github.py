@@ -7,7 +7,7 @@ if __name__ == "__main__":
     from sys import argv
 
     url = 'https://api.github.com/user'
-    r = requests.get(url, auth=(sys.argv[1], sys.argv[2]))
+    r = requests.get(url, auth=(argv[1], argv[2]))
     r_json = r.json()
     if r_json == {}:
         print("None")
