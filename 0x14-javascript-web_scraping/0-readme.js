@@ -6,7 +6,7 @@ const { resolve } = require('node:path');
 
 async function logFile (filePath) {
   try {
-    const contents = await readFile(filePath, { encoding: 'utf8' });
+    const contents = await readFile(filePath, 'utf8');
     console.log(contents);
   } catch (err) {
     console.log(err);
