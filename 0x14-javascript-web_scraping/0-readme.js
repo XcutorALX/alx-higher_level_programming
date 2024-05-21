@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// A script that reads and prints the content of a file
 
 const { readFile } = require('node:fs/promises');
 const { resolve } = require('node:path');
