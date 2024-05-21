@@ -12,5 +12,7 @@ async function logFile (filePath) {
   }
 }
 
-const filePath = resolve(process.argv.slice(2)[0]);
-logFile(filePath);
+if (process.argv.length >= 3) {
+  const myFile = resolve(process.argv[2]);
+  logFile(myFile);
+}
