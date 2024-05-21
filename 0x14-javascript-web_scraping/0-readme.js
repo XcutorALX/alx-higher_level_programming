@@ -2,7 +2,6 @@
 // A script that reads and prints the content of a file
 
 const { readFile } = require('node:fs/promises');
-const { resolve } = require('node:path');
 
 async function logFile (filePath) {
   try {
@@ -14,6 +13,6 @@ async function logFile (filePath) {
 }
 
 if (process.argv.length >= 3) {
-  const myFile = resolve(process.argv[2]);
+  const myFile = process.argv[2];
   logFile(myFile);
 }
