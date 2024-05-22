@@ -13,7 +13,10 @@ request(url, function (error, response, body) {
     const result = JSON.parse(body);
     for (let i = 0; i < result.length; i++) {
       key = result[i].userId;
-      out[key] = key in out ? out[key] + 1 : 1;
+
+      if (result[i].completed) {
+        out[key] = key in out ? out[key] + 1 : 1;
+      }
     }
     console.log(out);
   }
