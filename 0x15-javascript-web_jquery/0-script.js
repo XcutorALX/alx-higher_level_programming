@@ -3,4 +3,4 @@
 
 
 const header = document.querySelector("header");
-console.log(header.style);
+header.style.color = "#FF0000";
