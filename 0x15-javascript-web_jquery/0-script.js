@@ -3,4 +3,4 @@
 
 
 const header = document.querySelector("header");
-print(header);
+console.log(header);
